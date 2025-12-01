@@ -157,6 +157,8 @@ export default function Home() {
         <p>&copy; {new Date().getFullYear()} {t.footer}</p>
         <div className="flex justify-center gap-4 text-xs">
           <a href="/impressum" className="hover:text-mniam-green transition-colors">Impressum</a>
+          <span className="text-gray-700">•</span>
+          <a href="/datenschutz" className="hover:text-mniam-green transition-colors">Datenschutz</a>
         </div>
       </footer>
     </div>
