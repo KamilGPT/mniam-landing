@@ -22,6 +22,13 @@ Since I cannot access your personal GitHub account, you need to push the code ma
     ```
     *(Replace `YOUR_USERNAME` with your actual GitHub username)*
 
+    **Already pushed?** If you made changes (like the logo update), run:
+    ```bash
+    git add .
+    git commit -m "Update site"
+    git push
+    ```
+
 ## 2. Deploy on Vercel
 1.  Go to [vercel.com](https://vercel.com) and Sign Up / Login (you can use your GitHub account).
 2.  Click **"Add New..."** -> **"Project"**.
