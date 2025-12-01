@@ -22,7 +22,7 @@ Since I cannot access your personal GitHub account, you need to push the code ma
     ```
     *(Replace `YOUR_USERNAME` with your actual GitHub username)*
 
-    **Already pushed?** If you made changes (like the countdown update), run:
+    **Already pushed?** If you made changes (like adding German support), run:
     ```bash
     git add .
     git commit -m "Update site"

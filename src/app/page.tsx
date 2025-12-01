@@ -153,8 +153,11 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="py-8 text-center text-gray-600 text-sm relative z-10">
+      <footer className="py-8 text-center text-gray-600 text-sm relative z-10 space-y-2">
         <p>&copy; {new Date().getFullYear()} {t.footer}</p>
+        <div className="flex justify-center gap-4 text-xs">
+          <a href="/impressum" className="hover:text-mniam-green transition-colors">Impressum</a>
+        </div>
       </footer>
     </div>
   );
