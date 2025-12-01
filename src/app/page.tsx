@@ -3,48 +3,62 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-black">
       {/* Navigation */}
-      <nav className="w-full py-6 px-6 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
-        <div className="text-3xl font-bold text-mniam-green tracking-tighter">mniam</div>
-        <div className="hidden md:flex gap-8 font-medium text-gray-600">
+      <nav className="w-full py-6 px-6 md:px-12 flex justify-between items-center max-w-7xl mx-auto z-50 relative">
+        <div className="relative w-32 h-10">
+          <Image
+            src="/mniam-logo-green.png"
+            alt="Mniam Logo"
+            fill
+            className="object-contain object-left"
+            priority
+          />
+        </div>
+        <div className="hidden md:flex gap-8 font-medium text-gray-300">
           <Link href="#features" className="hover:text-mniam-green transition-colors">Features</Link>
           <Link href="#restaurants" className="hover:text-mniam-green transition-colors">For Restaurants</Link>
           <Link href="#download" className="hover:text-mniam-green transition-colors">Download</Link>
         </div>
-        <Link
-          href="#download"
-          className="bg-mniam-green text-white px-6 py-2.5 rounded-full font-semibold hover:bg-opacity-90 transition-all shadow-lg shadow-mniam-green/20"
-        >
-          Get the App
-        </Link>
+        <div className="flex items-center gap-4">
+          <span className="text-white/60 text-sm font-medium border border-white/20 px-3 py-1 rounded-full">Coming Soon</span>
+          <Link
+            href="#download"
+            className="bg-mniam-green text-white px-6 py-2.5 rounded-full font-semibold hover:bg-opacity-90 transition-all shadow-lg shadow-mniam-green/20"
+          >
+            Get the App
+          </Link>
+        </div>
       </nav>
 
       {/* Hero Section */}
       <main className="flex-1">
-        <section className="pt-12 pb-20 md:pt-24 md:pb-32 px-6">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <section className="pt-12 pb-20 md:pt-24 md:pb-32 px-6 relative overflow-hidden">
+          {/* Background Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black z-0"></div>
+
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
             <div className="flex-1 text-center md:text-left space-y-8">
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 leading-[1.1]">
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
                 Discover food <br />
                 <span className="text-mniam-green">you'll love.</span>
               </h1>
-              <p className="text-xl text-gray-600 max-w-lg mx-auto md:mx-0 leading-relaxed">
+              <p className="text-xl text-gray-400 max-w-lg mx-auto md:mx-0 leading-relaxed">
                 Mniam is your personal food guide. Find the best dishes nearby, filter by your dietary preferences, and see what your friends are eating.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
-                <button className="bg-black text-white px-8 py-4 rounded-xl flex items-center justify-center gap-3 hover:bg-gray-800 transition-all">
+                <button className="bg-white/10 text-white border border-white/10 px-8 py-4 rounded-xl flex items-center justify-center gap-3 hover:bg-white/20 transition-all backdrop-blur-sm cursor-not-allowed opacity-80">
                   <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.74 1.18 0 2.45-1.64 3.57-1.64.6 0 3.03.13 4.31 2.01-1.21.63-2.27 1.64-2.27 4.04 0 3.15 2.45 4.2 2.45 4.2-1.22 3.68-2.68 5.66-3.14 6.62zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.16 2.29-1.66 4.23-3.74 4.25z" /></svg>
                   <div className="text-left">
-                    <div className="text-xs">Download on the</div>
+                    <div className="text-xs text-gray-400">Coming soon to</div>
                     <div className="text-xl font-bold leading-none">App Store</div>
                   </div>
                 </button>
-                <button className="bg-black text-white px-8 py-4 rounded-xl flex items-center justify-center gap-3 hover:bg-gray-800 transition-all">
+                <button className="bg-white/10 text-white border border-white/10 px-8 py-4 rounded-xl flex items-center justify-center gap-3 hover:bg-white/20 transition-all backdrop-blur-sm cursor-not-allowed opacity-80">
                   <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186c-.185.185-.436.25-.66.166-.225-.083-.375-.298-.375-.538V2.186c0-.24.15-.455.375-.538.224-.084.474-.02.66.166zm10.96 10.96l2.126 2.127-2.6 1.5c-.29.166-.65.166-.94 0l-2.6-1.5 3.014-3.014.001.887zm.75-1.63l4.9-2.83c.48-.27.48-1.09 0-1.36l-4.9-2.83-2.126 2.127 2.126 4.893zm-5.65-5.65l2.6-1.5c.29-.166.65-.166.94 0l2.6 1.5-3.014 3.014-.001-.887-3.125-2.127z" /></svg>
                   <div className="text-left">
-                    <div className="text-xs">GET IT ON</div>
+                    <div className="text-xs text-gray-400">Coming soon to</div>
                     <div className="text-xl font-bold leading-none">Google Play</div>
                   </div>
                 </button>
@@ -53,7 +67,7 @@ export default function Home() {
 
             {/* Phone Mockup Placeholder */}
             <div className="flex-1 relative flex justify-center">
-              <div className="relative w-[300px] h-[600px] bg-gray-900 rounded-[3rem] border-8 border-gray-900 shadow-2xl overflow-hidden">
+              <div className="relative w-[300px] h-[600px] bg-gray-900 rounded-[3rem] border-8 border-gray-800 shadow-2xl overflow-hidden">
                 {/* Screen Content Placeholder */}
                 <div className="absolute inset-0 bg-white flex flex-col">
                   {/* Header */}
