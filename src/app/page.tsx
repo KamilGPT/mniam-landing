@@ -87,20 +87,27 @@ export default function Home() {
           />
         </div>
 
-        {/* Language Switcher */}
-        <div className="flex items-center gap-2 bg-white/10 rounded-full p-1 border border-white/10 backdrop-blur-sm">
-          <button
-            onClick={() => setLang('en')}
-            className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'en' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
-          >
-            EN
-          </button>
-          <button
-            onClick={() => setLang('de')}
-            className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'de' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
-          >
-            DE
-          </button>
+        <div className="flex items-center gap-6">
+          {/* About Link */}
+          <a href="/about" className="text-gray-400 hover:text-mniam-green transition-colors text-sm font-medium">
+            {lang === 'en' ? 'About' : 'Über uns'}
+          </a>
+
+          {/* Language Switcher */}
+          <div className="flex items-center gap-2 bg-white/10 rounded-full p-1 border border-white/10 backdrop-blur-sm">
+            <button
+              onClick={() => setLang('en')}
+              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'en' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
+            >
+              EN
+            </button>
+            <button
+              onClick={() => setLang('de')}
+              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'de' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
+            >
+              DE
+            </button>
+          </div>
         </div>
       </nav>
 
