@@ -54,8 +54,8 @@ export default function About() {
     return (
         <div className="min-h-screen flex flex-col bg-white text-gray-900">
             {/* Navigation */}
-            <nav className="w-full py-8 px-6 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
-                <Link href="/" className="relative w-40 h-12 mx-auto">
+            <nav className="w-full py-8 px-6 md:px-12 relative max-w-7xl mx-auto">
+                <Link href="/" className="relative w-40 h-12 mx-auto block">
                     <Image
                         src="/mniam-logo-green.png"
                         alt="Mniam Logo"
@@ -66,7 +66,7 @@ export default function About() {
                 </Link>
 
                 {/* Language Switcher */}
-                <div className="flex items-center gap-2 bg-gray-100 rounded-full p-1 border border-gray-200 absolute right-6 md:right-12">
+                <div className="flex items-center gap-2 bg-gray-100 rounded-full p-1 border border-gray-200 absolute top-8 right-6 md:right-12">
                     <button
                         onClick={() => setLang('en')}
                         className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'en' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-600 hover:text-gray-900'}`}
@@ -84,7 +84,6 @@ export default function About() {
 
             <main className="flex-1 max-w-4xl mx-auto px-6 py-12 w-full">
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4 text-mniam-green">{t.title}</h1>
                     <p className="text-xl text-gray-600">{t.subtitle}</p>
                     <p className="text-gray-500 mt-4">{t.intro}</p>
                 </div>

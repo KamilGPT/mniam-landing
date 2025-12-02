@@ -72,10 +72,10 @@ export default function Datenschutz() {
     const t = translations[lang];
 
     return (
-        <div className="min-h-screen flex flex-col bg-black text-white">
+        <div className="min-h-screen flex flex-col bg-white text-gray-900">
             {/* Navigation */}
-            <nav className="w-full py-8 px-6 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
-                <Link href="/" className="relative w-40 h-12 mx-auto">
+            <nav className="w-full py-8 px-6 md:px-12 relative max-w-7xl mx-auto">
+                <Link href="/" className="relative w-40 h-12 mx-auto block">
                     <Image
                         src="/mniam-logo-green.png"
                         alt="Mniam Logo"
@@ -86,16 +86,16 @@ export default function Datenschutz() {
                 </Link>
 
                 {/* Language Switcher */}
-                <div className="flex items-center gap-2 bg-white/10 rounded-full p-1 border border-white/10 backdrop-blur-sm absolute right-6 md:right-12">
+                <div className="flex items-center gap-2 bg-gray-100 rounded-full p-1 border border-gray-200 absolute top-8 right-6 md:right-12">
                     <button
                         onClick={() => setLang('en')}
-                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'en' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
+                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'en' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-600 hover:text-gray-900'}`}
                     >
                         EN
                     </button>
                     <button
                         onClick={() => setLang('de')}
-                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'de' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
+                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'de' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-600 hover:text-gray-900'}`}
                     >
                         DE
                     </button>
@@ -105,11 +105,11 @@ export default function Datenschutz() {
             <main className="flex-1 max-w-3xl mx-auto px-6 py-12 w-full">
                 <h1 className="text-3xl md:text-4xl font-bold mb-12 text-mniam-green">{t.title}</h1>
 
-                <div className="space-y-8 text-gray-300 leading-relaxed">
+                <div className="space-y-8 text-gray-700 leading-relaxed">
                     <p>{t.intro}</p>
 
                     <section>
-                        <h2 className="text-xl font-semibold text-white mb-4">{t.section1Title}</h2>
+                        <h2 className="text-xl font-semibold text-gray-900 mb-4">{t.section1Title}</h2>
                         <p>{t.section1Text}</p>
                         <p className="mt-2">
                             Kamil Jacek Krzyzanowski<br />
@@ -118,12 +118,12 @@ export default function Datenschutz() {
                     </section>
 
                     <section>
-                        <h2 className="text-xl font-semibold text-white mb-4">{t.section2Title}</h2>
+                        <h2 className="text-xl font-semibold text-gray-900 mb-4">{t.section2Title}</h2>
                         <p>{t.section2Text}</p>
                     </section>
 
                     <section>
-                        <h2 className="text-xl font-semibold text-white mb-4">{t.section3Title}</h2>
+                        <h2 className="text-xl font-semibold text-gray-900 mb-4">{t.section3Title}</h2>
                         <p>{t.section3Text}</p>
                         <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
                             {t.section3Items.map((item, i) => (
@@ -133,37 +133,38 @@ export default function Datenschutz() {
                     </section>
 
                     <section>
-                        <h2 className="text-xl font-semibold text-white mb-4">{t.section4Title}</h2>
+                        <h2 className="text-xl font-semibold text-gray-900 mb-4">{t.section4Title}</h2>
                         <p>{t.section4Text}</p>
                     </section>
 
                     <section>
-                        <h2 className="text-xl font-semibold text-white mb-4">{t.section5Title}</h2>
+                        <h2 className="text-xl font-semibold text-gray-900 mb-4">{t.section5Title}</h2>
                         <p>{t.section5Text}</p>
                     </section>
 
                     <section>
-                        <h2 className="text-xl font-semibold text-white mb-4">{t.section6Title}</h2>
+                        <h2 className="text-xl font-semibold text-gray-900 mb-4">{t.section6Title}</h2>
                         <p>{t.section6Text}</p>
                     </section>
 
                     <section>
-                        <h2 className="text-xl font-semibold text-white mb-4">{t.section7Title}</h2>
+                        <h2 className="text-xl font-semibold text-gray-900 mb-4">{t.section7Title}</h2>
                         <p>{t.section7Text}</p>
                     </section>
                 </div>
             </main>
 
-            <footer className="py-8 text-center text-gray-600 text-sm border-t border-white/10 space-y-2">
+            <footer className="py-8 text-center text-gray-600 text-sm border-t border-gray-200 space-y-2">
                 <p>&copy; {new Date().getFullYear()} {t.footer}</p>
                 <div className="flex justify-center gap-4 text-xs">
                     <a href="/about" className="hover:text-mniam-green transition-colors">{t.about}</a>
-                    <span className="text-gray-700">•</span>
+                    <span className="text-gray-400">•</span>
                     <a href="/impressum" className="hover:text-mniam-green transition-colors">{t.impressum}</a>
-                    <span className="text-gray-700">•</span>
+                    <span className="text-gray-400">•</span>
                     <a href="/datenschutz" className="hover:text-mniam-green transition-colors">{t.privacy}</a>
                 </div>
             </footer>
         </div>
     );
 }
+```

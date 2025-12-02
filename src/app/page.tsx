@@ -76,7 +76,7 @@ export default function Home() {
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-mniam-green/5 rounded-full blur-[128px] translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
 
       {/* Navigation */}
-      <nav className="w-full py-8 px-6 md:px-12 flex justify-between items-center relative z-10 max-w-7xl mx-auto">
+      <nav className="w-full py-8 px-6 md:px-12 relative z-10 max-w-7xl mx-auto">
         <div className="relative w-40 h-12 mx-auto">
           <Image
             src="/mniam-logo-green.png"
@@ -88,7 +88,7 @@ export default function Home() {
         </div>
 
         {/* Language Switcher */}
-        <div className="flex items-center gap-2 bg-white/10 rounded-full p-1 border border-white/10 backdrop-blur-sm absolute right-6 md:right-12">
+        <div className="flex items-center gap-2 bg-white/10 rounded-full p-1 border border-white/10 backdrop-blur-sm absolute top-8 right-6 md:right-12">
           <button
             onClick={() => setLang('en')}
             className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'en' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
