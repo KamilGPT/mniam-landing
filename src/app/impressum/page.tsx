@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 type Language = 'en' | 'de';
@@ -12,6 +13,7 @@ const translations = {
         contact: "Contact",
         responsible: "Responsible for content according to § 18 Abs. 2 MStV",
         footer: "Mniam App. All rights reserved.",
+        about: "About",
         impressum: "Legal Notice",
         privacy: "Privacy Policy"
     },
@@ -21,6 +23,7 @@ const translations = {
         contact: "Kontakt",
         responsible: "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
         footer: "Mniam App. Alle Rechte vorbehalten.",
+        about: "Über uns",
         impressum: "Impressum",
         privacy: "Datenschutz"
     }
@@ -34,12 +37,18 @@ export default function Impressum() {
         <div className="min-h-screen flex flex-col bg-black text-white">
             {/* Navigation */}
             <nav className="w-full py-8 px-6 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
-                <Link href="/" className="text-mniam-green font-bold text-2xl tracking-tighter hover:opacity-80 transition-opacity">
-                    mniam
+                <Link href="/" className="relative w-40 h-12 mx-auto">
+                    <Image
+                        src="/mniam-logo-green.png"
+                        alt="Mniam Logo"
+                        fill
+                        className="object-contain"
+                        priority
+                    />
                 </Link>
 
                 {/* Language Switcher */}
-                <div className="flex items-center gap-2 bg-white/10 rounded-full p-1 border border-white/10 backdrop-blur-sm">
+                <div className="flex items-center gap-2 bg-white/10 rounded-full p-1 border border-white/10 backdrop-blur-sm absolute right-6 md:right-12">
                     <button
                         onClick={() => setLang('en')}
                         className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'en' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
@@ -91,6 +100,8 @@ export default function Impressum() {
             <footer className="py-8 text-center text-gray-600 text-sm border-t border-white/10 space-y-2">
                 <p>&copy; {new Date().getFullYear()} {t.footer}</p>
                 <div className="flex justify-center gap-4 text-xs">
+                    <a href="/about" className="hover:text-mniam-green transition-colors">{t.about}</a>
+                    <span className="text-gray-700">•</span>
                     <a href="/impressum" className="hover:text-mniam-green transition-colors">{t.impressum}</a>
                     <span className="text-gray-700">•</span>
                     <a href="/datenschutz" className="hover:text-mniam-green transition-colors">{t.privacy}</a>

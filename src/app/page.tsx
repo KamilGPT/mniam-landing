@@ -77,37 +77,30 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className="w-full py-8 px-6 md:px-12 flex justify-between items-center relative z-10 max-w-7xl mx-auto">
-        <div className="relative w-40 h-12">
+        <div className="relative w-40 h-12 mx-auto">
           <Image
             src="/mniam-logo-green.png"
             alt="Mniam Logo"
             fill
-            className="object-contain object-left"
+            className="object-contain"
             priority
           />
         </div>
 
-        <div className="flex items-center gap-6">
-          {/* About Link */}
-          <a href="/about" className="text-gray-400 hover:text-mniam-green transition-colors text-sm font-medium">
-            {lang === 'en' ? 'About' : 'Über uns'}
-          </a>
-
-          {/* Language Switcher */}
-          <div className="flex items-center gap-2 bg-white/10 rounded-full p-1 border border-white/10 backdrop-blur-sm">
-            <button
-              onClick={() => setLang('en')}
-              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'en' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
-            >
-              EN
-            </button>
-            <button
-              onClick={() => setLang('de')}
-              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'de' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
-            >
-              DE
-            </button>
-          </div>
+        {/* Language Switcher */}
+        <div className="flex items-center gap-2 bg-white/10 rounded-full p-1 border border-white/10 backdrop-blur-sm absolute right-6 md:right-12">
+          <button
+            onClick={() => setLang('en')}
+            className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'en' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
+          >
+            EN
+          </button>
+          <button
+            onClick={() => setLang('de')}
+            className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'de' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
+          >
+            DE
+          </button>
         </div>
       </nav>
 
@@ -163,9 +156,11 @@ export default function Home() {
       <footer className="py-8 text-center text-gray-600 text-sm relative z-10 space-y-2">
         <p>&copy; {new Date().getFullYear()} {t.footer}</p>
         <div className="flex justify-center gap-4 text-xs">
-          <a href="/impressum" className="hover:text-mniam-green transition-colors">Impressum</a>
+          <a href="/about" className="hover:text-mniam-green transition-colors">{lang === 'en' ? 'About' : 'Über uns'}</a>
           <span className="text-gray-700">•</span>
-          <a href="/datenschutz" className="hover:text-mniam-green transition-colors">Datenschutz</a>
+          <a href="/impressum" className="hover:text-mniam-green transition-colors">{lang === 'en' ? 'Legal Notice' : 'Impressum'}</a>
+          <span className="text-gray-700">•</span>
+          <a href="/datenschutz" className="hover:text-mniam-green transition-colors">{lang === 'en' ? 'Privacy Policy' : 'Datenschutz'}</a>
         </div>
       </footer>
     </div>
