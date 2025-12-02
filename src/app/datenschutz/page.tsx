@@ -84,22 +84,6 @@ export default function Datenschutz() {
                         priority
                     />
                 </Link>
-
-                {/* Language Switcher */}
-                <div className="flex items-center gap-2 bg-gray-100 rounded-full p-1 border border-gray-200 absolute top-8 right-6 md:right-12">
-                    <button
-                        onClick={() => setLang('en')}
-                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'en' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-600 hover:text-gray-900'}`}
-                    >
-                        EN
-                    </button>
-                    <button
-                        onClick={() => setLang('de')}
-                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'de' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-600 hover:text-gray-900'}`}
-                    >
-                        DE
-                    </button>
-                </div>
             </nav>
 
             <main className="flex-1 max-w-3xl mx-auto px-6 py-12 w-full">
@@ -154,7 +138,23 @@ export default function Datenschutz() {
                 </div>
             </main>
 
-            <footer className="py-8 text-center text-gray-600 text-sm border-t border-gray-200 space-y-2">
+            <footer className="py-8 text-center text-gray-600 text-sm border-t border-gray-200 space-y-3">
+                {/* Language Switcher */}
+                <div className="flex items-center gap-2 bg-gray-100 rounded-full p-1 border border-gray-200 w-fit mx-auto">
+                    <button
+                        onClick={() => setLang('en')}
+                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'en' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-600 hover:text-gray-900'}`}
+                    >
+                        EN
+                    </button>
+                    <button
+                        onClick={() => setLang('de')}
+                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'de' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-600 hover:text-gray-900'}`}
+                    >
+                        DE
+                    </button>
+                </div>
+
                 <p>&copy; {new Date().getFullYear()} {t.footer}</p>
                 <div className="flex justify-center gap-4 text-xs">
                     <a href="/about" className="hover:text-mniam-green transition-colors">{t.about}</a>

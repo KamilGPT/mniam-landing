@@ -86,22 +86,6 @@ export default function Home() {
             priority
           />
         </div>
-
-        {/* Language Switcher */}
-        <div className="flex items-center gap-2 bg-white/10 rounded-full p-1 border border-white/10 backdrop-blur-sm absolute top-8 right-6 md:right-12">
-          <button
-            onClick={() => setLang('en')}
-            className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'en' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
-          >
-            EN
-          </button>
-          <button
-            onClick={() => setLang('de')}
-            className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'de' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
-          >
-            DE
-          </button>
-        </div>
       </nav>
 
       {/* Main Content */}
@@ -153,7 +137,23 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="py-8 text-center text-gray-600 text-sm relative z-10 space-y-2">
+      <footer className="py-8 text-center text-gray-600 text-sm relative z-10 space-y-3">
+        {/* Language Switcher */}
+        <div className="flex items-center gap-2 bg-white/10 rounded-full p-1 border border-white/10 backdrop-blur-sm w-fit mx-auto">
+          <button
+            onClick={() => setLang('en')}
+            className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'en' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
+          >
+            EN
+          </button>
+          <button
+            onClick={() => setLang('de')}
+            className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${lang === 'de' ? 'bg-mniam-green text-white shadow-lg' : 'text-gray-400 hover:text-white'}`}
+          >
+            DE
+          </button>
+        </div>
+
         <p>&copy; {new Date().getFullYear()} {t.footer}</p>
         <div className="flex justify-center gap-4 text-xs">
           <a href="/about" className="hover:text-mniam-green transition-colors">{lang === 'en' ? 'About' : 'Über uns'}</a>
